@@ -63,7 +63,7 @@ namespace ET.Client
 
         public static void OnBuildEnter(Scene root, int npcid, WindowID windowID)
         {
-            int FunctionId = NpcConfigCategory.Instance.Get(npcid).NpcType;
+            int FunctionId = NpcConfigCategory.Instance.Get(npcid).FuncitonID;
             FuntionConfig funtionOpenConfig = FuntionConfigCategory.Instance.Get(FunctionId);
 
             root.GetComponent<UIComponent>().GetDlgLogic<DlgMain>().View.ES_JoystickMove.uiTransform.gameObject.SetActive(true);

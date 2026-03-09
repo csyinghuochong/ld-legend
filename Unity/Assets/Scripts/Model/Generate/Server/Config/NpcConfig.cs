@@ -66,7 +66,7 @@ namespace ET
 		/// <summary>商店值</summary>
 		public int ShopValue { get; set; }
 		/// <summary>NPC类型</summary>
-		public int NpcType { get; set; }
+		public int FuncitonID { get; set; }
 		/// <summary>任务ID</summary>
 		public int[] TaskID { get; set; }
 		/// <summary>剧情对话ID</summary>
