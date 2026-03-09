@@ -76,8 +76,7 @@ namespace ET.Client
         public static void RegisterUIEvent(this DlgRole self)
         {
             self.View.E_FunctionSetBtnToggleGroup.AddListener(self.OnFunctionSetBtn);
-            self.View.E_ZodiacButton.AddListenerAsync(self.OnZodiacButton);
-
+          
             self.View.E_FunctionSetBtnToggleGroup.OnSelectIndex(0);
 
             ReddotViewComponent redPointComponent = self.Root().GetComponent<ReddotViewComponent>();
@@ -224,21 +223,7 @@ namespace ET.Client
               
             }
         }
-
-        public static async ETTask OnZodiacButton(this DlgRole self)
-        {
-            UserInfoComponentC userInfoComponent = self.Root().GetComponent<UserInfoComponentC>();
-            if (userInfoComponent.UserInfo.Lv < 30)
-            {
-                FlyTipComponent.Instance.ShowFlyTip("30级开启生肖系统喔！");
-                return;
-            }
-
-            await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_RoleZodiac);
-          
-            self.View.E_ZodiacButton.gameObject.SetActive(false);
-            self.View.ES_EquipSet.uiTransform.gameObject.SetActive(false);
-        }
+        
 
         public static void OnCloseRoleZodiac(this DlgRole self)
         {

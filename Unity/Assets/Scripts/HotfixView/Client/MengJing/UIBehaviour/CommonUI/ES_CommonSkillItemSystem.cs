@@ -99,7 +99,7 @@ namespace ET.Client
 
         private static async ETTask BeginDrag(this ES_CommonSkillItem self, PointerEventData pdata)
         {
-            await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_SkillTips);
+            //await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_SkillTips);
 
             Vector2 localPoint;
             RectTransform canvas = self.Root().GetComponent<GlobalComponent>().NormalRoot.GetComponent<RectTransform>();
@@ -116,7 +116,7 @@ namespace ET.Client
 
         private static void EndDrag(this ES_CommonSkillItem self, PointerEventData pdata)
         {
-            self.Root().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_SkillTips);
+            //self.Root().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_SkillTips);
             self.SelectAction?.Invoke(self.SkillId);
         }
     }

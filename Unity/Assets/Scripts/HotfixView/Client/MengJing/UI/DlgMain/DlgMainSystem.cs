@@ -557,11 +557,7 @@ namespace ET.Client
         {
             await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_Role);
         }
-
-        private static async ETTask OnPetButton(this DlgMain self)
-        {
-            await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_Pet);
-        }
+        
 
         private static async ETTask OnRoseSkillButton(this DlgMain self)
         {
@@ -578,24 +574,11 @@ namespace ET.Client
             self.Root().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Friend);
         }
 
-        private static void OnChengJiuButton(this DlgMain self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_ChengJiu);
-        }
-
         #endregion
 
         #region 右下角
+        
 
-        private static void OnAdventureButton(this DlgMain self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_DungeonMap);
-        }
-
-        private static void OnPetFormationButton(this DlgMain self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_PetSet);
-        }
 
         public static void OnCityHorseButton(this DlgMain self, bool showtip)
         {
@@ -625,12 +608,7 @@ namespace ET.Client
 
             UserInfoNetHelper.HorseRideRequest(self.Root()).Coroutine();
         }
-
-        private static void OnTeamDungeonButton(this DlgMain self)
-        {
-            Log.Debug("组队副本！！！");
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_TeamDungeon).Coroutine();
-        }
+        
 
         public static void OnJiaYuanButton(this DlgMain self)
         {
@@ -728,37 +706,11 @@ namespace ET.Client
 
             self.View.E_Button_RechargeRewardButton.gameObject.SetActive(showButton);
         }
-
-        private static void OnButton_WelfareButton(this DlgMain self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_Welfare).Coroutine();
-        }
-
+        
         private static void OnBtn_GMButton(this DlgMain self)
         {
             self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_GM).Coroutine();
         }
-
-        public static void OnBtn_RankButton(this DlgMain self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_Rank).Coroutine();
-        }
-
-        private static void OnButton_WorldLvButton(this DlgMain self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_WorldLv).Coroutine();
-        }
-
-        private static void OnBtn_PaiMaiHangButton(this DlgMain self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_PaiMai).Coroutine();
-        }
-
-        private static void OnBtn_CellDungeon(this DlgMain self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_CellChapterSelect).Coroutine();
-        }
-        
         
         public static void OnBtn_RerurnDungeonButton(this DlgMain self)
         {
@@ -782,20 +734,6 @@ namespace ET.Client
         {
             int unitType = defend.Type;
  
-        }
-        
-        public static void OnChapterOpen(this DlgMain self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_CellChapterOpen).Coroutine();
-
-        }
-
-        public static void OnCellDungeonEnterShow(this DlgMain self, int chapterId)
-        {
-            if (chapterId == 0)
-                return;
-
-            self.Root().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_CellDungeonEnterShow);
         }
 
         public static void InitMainHero(this DlgMain self, int sceneTypeEnum)
@@ -830,7 +768,6 @@ namespace ET.Client
             self.Root().GetComponent<BattleMessageComponent>().AttackSelfPlayer.Clear();
             self.Root().RemoveComponent<UnitGuaJiComponent>();
             self.Root().GetComponent<UIComponent>().CloseWindow(WindowID.WindowID_Chat);
-            self.Root().GetComponent<UIComponent>().CloseWindow(WindowID.WindowID_DamageValue);
         }
         
         /// <summary>

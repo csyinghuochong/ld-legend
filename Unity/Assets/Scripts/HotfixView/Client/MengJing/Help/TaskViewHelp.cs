@@ -1195,12 +1195,12 @@ namespace ET.Client
 
         private static async ETTask OpenUIGivePet(Scene root, TaskPro taskPro)
         {
-            await root.GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_GivePet);
+            await ETTask.CompletedTask;
         }
 
         private static async ETTask OpenUIGiveTask(Scene root, TaskPro taskPro)
         {
-            await root.GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_GiveTask);
+            await ETTask.CompletedTask;
 
         }
 

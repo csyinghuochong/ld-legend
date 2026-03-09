@@ -17,7 +17,7 @@ namespace ET.Client
 
         public static void OnImageButtonButton(this DlgBuffTips self)
         {
-            self.Root().GetComponent<UIComponent>().CloseWindow(WindowID.WindowID_SkillTips);
+            
         }
 
         public static void OnUpdateData(this DlgBuffTips self, int buffid, Vector3 vector3, string spellcast, string aBAtlasTypes, string bufficon)

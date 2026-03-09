@@ -18,7 +18,7 @@ namespace ET.Client
 
         public static void OpenFunctionUI(Scene root, int npcid, int functionid)
         {
-            if (functionid < 10)
+            if (functionid < 1000)
             {
                 return;
             }

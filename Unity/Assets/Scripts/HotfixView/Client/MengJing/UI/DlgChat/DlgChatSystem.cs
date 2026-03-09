@@ -216,12 +216,6 @@ namespace ET.Client
                     return;
                 }
 
-                if (text.Equals("#allitemui"))
-                {
-                    self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_AllItem).Coroutine();
-                    return;
-                }
-
                 if (text.Contains("#"))
                 {
                     string[] commands = text.Split('#');

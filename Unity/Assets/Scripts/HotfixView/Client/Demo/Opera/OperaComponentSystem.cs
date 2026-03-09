@@ -395,10 +395,6 @@ namespace ET.Client
             {
                 return;
             }
-            if (unit.Type == UnitType.Player)
-            {
-                await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_WatchMenu);
-            }
         }
 
         public static bool CheckMonster(this OperaComponent self)
@@ -481,7 +477,7 @@ namespace ET.Client
             if (unitmonster.Type == UnitType.Pasture)
             {
                 self.Root().GetComponent<LockTargetComponent>().LockTargetUnitId(unitid);
-                await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_JiaYuanMenu);
+               
             }
         }
 
@@ -580,8 +576,7 @@ namespace ET.Client
 
         public static async ETTask OpenNpcTaskUI(this OperaComponent self, int npcid)
         {
-            await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_TaskGet);
-          
+           
         }
 
         public static void OnUnitToSpeak(this OperaComponent self, Vector3 vector3)

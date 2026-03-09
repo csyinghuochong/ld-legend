@@ -45,7 +45,6 @@ namespace ET.Client
 
             ShowWindowData showWindowData = new ShowWindowData();
             showWindowData.ParamInfoInt = 3;
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_PaiMai, showWindowData).Coroutine();
         }
 
         private static void OnAddZuanShiButton(this DlgHuoBiSet self)
@@ -80,19 +79,9 @@ namespace ET.Client
             UIComponent uiComponent = self.Root().GetComponent<UIComponent>();
 
             uiComponent.CloseWindow(WindowID.WindowID_ItemTips);
-            uiComponent.CloseWindow(WindowID.WindowID_EquipDuiBiTips);
-
+ 
             if (uiComponent.OpenUIList.Count > 0)
             {
-                if (uiComponent.OpenUIList[0] == WindowID.WindowID_Setting)
-                {
-                }
-
-                if (uiComponent.OpenUIList[0] == WindowID.WindowID_Role)
-                {
-                    uiComponent.CloseWindow(WindowID.WindowID_RoleZodiac);
-                }
-
                 uiComponent.CloseWindow(uiComponent.OpenUIList[0]);
             }
         }
@@ -115,22 +104,8 @@ namespace ET.Client
             {
                 WindowID.WindowID_Task => "Title_Task",
                 WindowID.WindowID_Role => "Title_Rose",
-                WindowID.WindowID_Pet => "Title_Pet",
                 WindowID.WindowID_Skill => "Title_Skill",
                 WindowID.WindowID_Friend => "Title_Friend",
-                WindowID.WindowID_ChengJiu => "Title_ChengJiu",
-                WindowID.WindowID_PetBar => "Title_Pet",
-                WindowID.WindowID_ShouJi => "Title_Skill",
-
-                WindowID.WindowID_MakeLearn => "Title_Make",
-                WindowID.WindowID_GemMake => "Title_Make",
-                WindowID.WindowID_RoleXiLian => "Title_Make",
-                WindowID.WindowID_ShenQiMake => "Title_Make",
-                WindowID.WindowID_PetEquipMake => "Title_Make",
-                WindowID.WindowID_Rank => "Title_Rose",
-                WindowID.WindowID_Warehouse => "Title_Rose",
-                WindowID.WindowID_Mail => "Title_Rose",
-
                 _ => "Default"
             };
             
@@ -139,37 +114,9 @@ namespace ET.Client
             {
                 WindowID.WindowID_Task => "任务系统",
                 WindowID.WindowID_Role => "角色系统",
-                WindowID.WindowID_Pet => "宠物系统",
                 WindowID.WindowID_Skill => "技能系统",
                 WindowID.WindowID_Friend => "好友系统",
-                WindowID.WindowID_ChengJiu => "成就系统",
-                WindowID.WindowID_PetBar => "宠物布阵",
-                WindowID.WindowID_ShouJi => "拾光收集",
-                WindowID.WindowID_Trial => "巅峰试炼",
-                WindowID.WindowID_Tower => "勇者之境",
-                WindowID.WindowID_Rank => "排行榜",
-                WindowID.WindowID_TowerOfSeal=>"灵禁秘塔",
-                WindowID.WindowID_GemMake=>"宝石制造",
-                WindowID.WindowID_PaiMai=>"交易行",
-                WindowID.WindowID_MakeLearn=>"学习制造",
-                WindowID.WindowID_RoleXiLian=>"装备洗练",
-                WindowID.WindowID_ShenQiMake=>"制造神器",
-                WindowID.WindowID_Store =>"商店系统",
-                WindowID.WindowID_Mail=>"邮件系统",
-                WindowID.WindowID_Warehouse=>"我的仓库",
-                WindowID.WindowID_ZuoQi=>"坐骑系统",
-                WindowID.WindowID_ChouKa=>"幸运探宝",
-                WindowID.WindowID_PetEgg=>"宠物探索",
-                WindowID.WindowID_Season=>"赛季系统",
-                WindowID.WindowID_Activity=>"游戏活动",
-                WindowID.WindowID_Country=>"每日活跃",
                 WindowID.WindowID_Recharge=>"游戏商城",
-                WindowID.WindowID_PetEquipMake=>"宠装制造",
-                WindowID.WindowID_ZhanQu=>"奖励系统",
-                WindowID.WindowID_Setting=>"游戏设置",
-                WindowID.WindowID_PetMeleeLevel=>"宠物挑战",
-                WindowID.WindowID_DragonDungeon=>"游戏副本",
-                WindowID.WindowID_DragonDungeonCreate=>"创建副本",
                 _ => ""
             };
 

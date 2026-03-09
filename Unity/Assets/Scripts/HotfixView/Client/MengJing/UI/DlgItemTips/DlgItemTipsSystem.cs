@@ -286,7 +286,7 @@ namespace ET.Client
 
         private static async ETTask OnSellButton(this DlgItemTips self)
         {
-            await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_ItemSellTip);
+          
             self.OnCloseTips();
         }
 
@@ -408,32 +408,7 @@ namespace ET.Client
                 FlyTipComponent.Instance.ShowFlyTip("请前往主城的宠物蛋孵化处!");
                 return;
             }
-
-            if (itemConfig.ItemSubType == 112)
-            {
-                // AccountInfoComponent accountInfoComponent = self.ZoneScene().GetComponent<AccountInfoComponent>();
-                // long openserverTime = ServerHelper.GetOpenServerTime(!GlobalHelp.IsOutNetMode, accountInfoComponent.ServerId);
-                // if (TimeHelper.ServerNow() - openserverTime < TimeHelper.Hour * 4)
-                // {
-                //     FloatTipManager.Instance.ShowFloatTip("开区4小时后开启!");
-                //     return;
-                // }
-
-                await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_ItemExpBox);
-             
-                self.OnCloseTips();
-                return;
-            }
-
-            // 弹出道具批量使用
-            if (self.BagInfo.ItemNum >= 2 && ConfigData.BatchUseItemList.Contains(itemConfig.Id))
-            {
-                await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_ItemBatchUse);
-               
-                self.OnCloseTips();
-                return;
-            }
-
+            
             if (itemConfig.ItemSubType == 113 || itemConfig.ItemSubType == 127)
             {
                 if (self.Root().GetComponent<BagComponentC>().GetBagLeftCell(ItemLocType.ItemLocBag) < 1)
@@ -561,8 +536,7 @@ namespace ET.Client
 
         private static async ETTask OnSplitButton(this DlgItemTips self)
         {
-            await self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_RoleBagSplit);
-           
+            
             self.OnCloseTips();
         }
 

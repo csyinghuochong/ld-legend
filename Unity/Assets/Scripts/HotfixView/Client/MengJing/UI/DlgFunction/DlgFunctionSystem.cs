@@ -21,10 +21,6 @@ namespace ET.Client
             self.View.E_PetButton.AddListener(self.OnPet);
             self.View.E_RoseSkillButton.AddListener(self.OnRoseSkill);
             self.View.E_FriendButton.AddListener(self.OnFriend);
-            self.View.E_ChengJiuButton.AddListener(self.OnChengJiu);
-            self.View.E_PetBarButton.AddListener(self.OnPetBar);
-            self.View.E_SettingButton.AddListener(self.OnSetting);
-            self.View.E_UnionButton.AddListener(self.OnUnion);
             self.View.E_SingleHappyButton.AddListenerAsync(self.OnSingleHappy);
 
             ReddotViewComponent redPointComponent = self.Root().GetComponent<ReddotViewComponent>();
@@ -120,13 +116,13 @@ namespace ET.Client
 
         private static void OnPetMelee(this DlgFunction self)
         {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_PetMeleeLevel).Coroutine();
+           
             self.OnClose();
         }
 
         private static void OnDragonDungeonButton(this DlgFunction self)
         {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_DragonDungeon).Coroutine();
+         
             self.OnClose();
         }
 
@@ -137,7 +133,7 @@ namespace ET.Client
 
         private static void OnPet(this DlgFunction self)
         {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_Pet).Coroutine();
+          
             self.OnClose();
         }
 
@@ -152,29 +148,6 @@ namespace ET.Client
             self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_Friend).Coroutine();
             self.OnClose();
         }
-
-        private static void OnChengJiu(this DlgFunction self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_ChengJiu).Coroutine();
-            self.OnClose();
-        }
-
-        private static void OnPetBar(this DlgFunction self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_PetBar).Coroutine();
-            self.OnClose();
-        }
-
-        private static void OnSetting(this DlgFunction self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_Setting).Coroutine();
-            self.OnClose();
-        }
-
-        private static void OnUnion(this DlgFunction self)
-        {
-            self.Root().GetComponent<UIComponent>().ShowWindowAsync(WindowID.WindowID_Union).Coroutine();
-            self.OnClose();
-        }
+        
     }
 }

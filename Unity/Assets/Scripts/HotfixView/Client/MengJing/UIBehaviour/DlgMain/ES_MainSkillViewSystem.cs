@@ -87,10 +87,8 @@ namespace ET.Client
                 self.Root().GetComponent<UIComponent>().GetDlgLogic<DlgMain>().View.ES_JoystickMove.uiTransform.gameObject.SetActive(false);
                  UIComponent uiComponent = self.Root().GetComponent<UIComponent>();
                  uiComponent.CurrentNpcId = target.ConfigId;
-                 uiComponent.CurrentNpcUI = WindowID.WindowID_ZhuaPu;
                 MJCameraComponent cameraComponent = self.Root().CurrentScene().GetComponent<MJCameraComponent>();
-                
-              
+   
             }
             
         }

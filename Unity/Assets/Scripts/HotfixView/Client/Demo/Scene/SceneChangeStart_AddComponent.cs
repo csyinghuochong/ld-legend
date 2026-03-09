@@ -26,10 +26,7 @@ namespace ET.Client
 
                 switch (args.LastSceneType)
                 {
-                    case MapTypeEnum.PetMelee:
-                    case MapTypeEnum.PetMatch:
-                        root.GetComponent<UIComponent>().CloseWindow(WindowID.WindowID_PetMeleeMain);
-                        break;
+
                     default:
                         break;
                 }

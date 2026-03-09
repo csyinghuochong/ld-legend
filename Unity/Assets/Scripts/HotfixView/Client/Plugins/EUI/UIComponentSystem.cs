@@ -358,12 +358,8 @@ namespace ET.Client
 
         private static  bool HaveUniversalBlurFeature(this UIComponent self, WindowID id)
         {
-            if (id == WindowID.WindowID_CellDungeonCell
-                || id == WindowID.WindowID_Function
+            if ( id == WindowID.WindowID_Function
                 || id == WindowID.WindowID_MapBig
-                || id == WindowID.WindowID_PetBar
-                || id == WindowID.WindowID_PetMelee
-                || id == WindowID.WindowID_PetMeleeLevel
                 || id == WindowID.WindowID_Role
                 || id == WindowID.WindowID_MJLobby
                 || id == WindowID.WindowID_Chat)
