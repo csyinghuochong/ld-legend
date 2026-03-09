@@ -87,16 +87,12 @@ namespace ET
 		public int SellMoneyValue { get; set; }
 		/// <summary>装备ID</summary>
 		public int ItemEquipID { get; set; }
-		/// <summary>宠物之核合成新道具</summary>
-		public int PetHeXinHeChengID { get; set; }
 		/// <summary>道具使用参数</summary>
 		public string ItemUsePar { get; set; }
 		/// <summary>道具技能</summary>
 		public string SkillID { get; set; }
 		/// <summary>道具Tips显示技能</summary>
 		public int SkillIDIfShow { get; set; }
-		/// <summary>洗练石数量</summary>
-		public int[] XiLianStone { get; set; }
 		/// <summary>回收获取物品</summary>
 		public string HuiShouGetItem { get; set; }
 		/// <summary>道具描述</summary>

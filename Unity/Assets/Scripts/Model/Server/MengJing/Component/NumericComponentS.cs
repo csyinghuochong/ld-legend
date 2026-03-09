@@ -73,6 +73,15 @@ namespace ET.Server
 
             if (numericType > NumericType.Max)
             {
+                
+                //【基础累加值】属性的核心基础值（比如角色等级 / 装备提供的基础生命值）1000
+                //【基础乘系数】基础值的乘法加成（百分比，比如 “基础生命值 + 10%”）
+                //【最终累加值】基础计算完成后额外加的固定值（比如 “固定增加 500 生命值”） 
+                //buffAdd【Buff 累加值】临时 Buff 提供的固定加成（比如 “增益 buff：+200 生命值”）
+                //buffMul【Buff 乘系数】临时 Buff 提供的百分比加成（比如 “增益 buff：生命值 + 15%”）
+                //( (1000) * (1 + 0.1) + 500) * (1 + 0.15) + 200 
+
+                
                 ///注意下 客户端应该是不需要这个逻辑的。
                 self.NumericDic[numericType] = value;
                 nowValue = numericType / 100;
@@ -82,13 +91,6 @@ namespace ET.Server
                 int buffAdd = nowValue * 100 + 11;
                 int buffMul = nowValue * 100 + 12;
 
-                //【基础累加值】属性的核心基础值（比如角色等级 / 装备提供的基础生命值）1000
-                //【基础乘系数】基础值的乘法加成（百分比，比如 “基础生命值 + 10%”）
-                //【最终累加值】基础计算完成后额外加的固定值（比如 “固定增加 500 生命值”） 
-                //buffAdd【Buff 累加值】临时 Buff 提供的固定加成（比如 “增益 buff：+200 生命值”）
-                //buffMul【Buff 乘系数】临时 Buff 提供的百分比加成（比如 “增益 buff：生命值 + 15%”）
-                //( (1000) * (1 + 0.1) + 500) * (1 + 0.15) + 200 
-                
                 old = self.GetByKey(nowValue);
                 nowPropertyValue =
                         (long)((self.GetByKey(add) * (1 + self.GetAsFloat(mul)) + self.GetByKey(finalAdd)) * (1 + self.GetAsFloat(buffMul)) +
