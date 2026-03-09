@@ -707,27 +707,7 @@ namespace ET.Server
               
               c2M_SkillCmd.SkillID = addSkillId;
               self.OnUseSkill(c2M_SkillCmd, false);
-              
-              int[] selfSkillList = skillConfig.TriggerSelfSkillID;
-              if (selfSkillList == null || selfSkillList.Length == 0 || selfSkillList[0] == 0)
-              {
-                  return;
-              }
-              SkillSetComponentS skillset = self.GetParent<Unit>().GetComponent<SkillSetComponentS>();
-              if (skillset == null)
-              {
-                  return;
-              }
-              for (int i = 0; i < selfSkillList.Length; i++)
-              {
-                  int selfSkillId = selfSkillList[i];
-                  if (skillset.GetBySkillID(selfSkillId) == null)
-                  {
-                      continue;
-                  }
-                  c2M_SkillCmd.SkillID = selfSkillId;
-                  self.OnUseSkill(c2M_SkillCmd, false);
-              }
+             
           }
 
           public static SkillCDItem UpdateNormalCD(this SkillManagerComponentS self, int itemid, int skillId, int weaponSkill, bool zhudong)

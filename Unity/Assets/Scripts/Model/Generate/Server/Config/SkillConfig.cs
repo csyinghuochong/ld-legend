@@ -71,8 +71,6 @@ namespace ET
 		public string SkillIcon { get; set; }
 		/// <summary>下一级技能</summary>
 		public int NextSkillID { get; set; }
-		/// <summary>使用武器触发</summary>
-		public int WeaponType { get; set; }
 		/// <summary>学习技能等级</summary>
 		public int LearnRoseLv { get; set; }
 		/// <summary>升级消耗SP值</summary>
@@ -89,6 +87,8 @@ namespace ET
 		public int[] PassiveSkillType { get; set; }
 		/// <summary>被动技能触发参数</summary>
 		public double[] PassiveSkillPro { get; set; }
+		/// <summary>技能触发时间</summary>
+		public double PassiveSkillTriggerTime { get; set; }
 		/// <summary>被动技能触发一次</summary>
 		public int PassiveSkillTriggerOnce { get; set; }
 		/// <summary>施法目标</summary>
@@ -99,16 +99,10 @@ namespace ET
 		public int SkillActType { get; set; }
 		/// <summary>伤害类型</summary>
 		public int DamgeType { get; set; }
-		/// <summary>伤害元素攻击</summary>
-		public int DamgeElementType { get; set; }
 		/// <summary>攻击系数</summary>
 		public double ActDamge { get; set; }
-		/// <summary>怪物攻击系数</summary>
-		public double MonsterActDamge { get; set; }
 		/// <summary>固定伤害值</summary>
 		public int DamgeValue { get; set; }
-		/// <summary>是否必中</summary>
-		public int IfMustAct { get; set; }
 		/// <summary>消耗魔法</summary>
 		public int SkillUseMP { get; set; }
 		/// <summary>增加魔法</summary>
@@ -165,22 +159,8 @@ namespace ET
 		public string ComObjParameter { get; set; }
 		/// <summary>是否显示</summary>
 		public int IsShow { get; set; }
-		/// <summary>技能描述</summary>
-		public string SkillDescribe { get; set; }
-		/// <summary>施法时面对目标时间</summary>
-		public double IfLookAtTatgetTime { get; set; }
 		/// <summary>触发技能时附带技能</summary>
 		public int AddSkillID { get; set; }
-		/// <summary>技能触发时间</summary>
-		public double PassiveSkillTriggerTime { get; set; }
-		/// <summary>施法时是否面对目标</summary>
-		public int IfLookAtTarget { get; set; }
-		/// <summary>怪物技能延迟</summary>
-		public double MonsterDelayTime { get; set; }
-		/// <summary>宠物互斥ID</summary>
-		public int HuChiID { get; set; }
-		/// <summary>触发自身拥有技能</summary>
-		public int[] TriggerSelfSkillID { get; set; }
 		/// <summary>释放技能是否打断移动</summary>
 		public int IfStopMove { get; set; }
 		/// <summary>技能持续伤害是否触发Buff</summary>
@@ -199,14 +179,14 @@ namespace ET
 		public string BuffToSkill { get; set; }
 		/// <summary>技能伤害增加</summary>
 		public string SkillDamgeAddValue { get; set; }
-		/// <summary>最大攻击数量</summary>
-		public int MaxAttackNumber { get; set; }
 		/// <summary>震屏类型</summary>
 		public int ShakeCameraType { get; set; }
 		/// <summary>震屏开始时间</summary>
 		public double ShakeStart { get; set; }
 		/// <summary>震持续时间</summary>
 		public double ShakeDuration { get; set; }
+		/// <summary>技能描述</summary>
+		public string SkillDescribe { get; set; }
 
 	}
 }

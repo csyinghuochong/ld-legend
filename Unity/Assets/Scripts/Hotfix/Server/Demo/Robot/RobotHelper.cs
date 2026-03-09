@@ -611,7 +611,7 @@ namespace ET.Client
             NumericComponentC numericComponent = unit.GetComponent<NumericComponentC>();
 
             NpcConfig npcConfig = NpcConfigCategory.Instance.Get(npcid);
-            switch (npcConfig.NpcType)
+            switch (npcConfig.FuncitonID)
             {
                 case 1: //神兽兑换
                 case 2: //挑戰之地
