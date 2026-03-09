@@ -13,47 +13,7 @@ namespace ET
         {
             foreach (MonsterConfig monsterConfig in this.GetAll().Values)
             {
-                //1;70001001@3;70001003
-                if (string.IsNullOrEmpty(monsterConfig.OpenDayMonster))
-                {
-                    continue;
-                }
-
-                string[] opendaylist = monsterConfig.OpenDayMonster.Split('@');
-                for (int i = 0; i < opendaylist.Length; i++)
-                { 
-                    string[] monsterinfo  = opendaylist[i].Split(";");
-                    if(monsterinfo.Length < 2)
-                    {
-                        continue;
-                    }
-
-                    if (!OpenDayMonsters.ContainsKey(monsterConfig.Id))
-                    {
-                        OpenDayMonsters.Add(monsterConfig.Id, new List<KeyValuePair<int, int>>());
-                    }
-                    int openDay = int.Parse(monsterinfo[0]);
-                    int monster = int.Parse(monsterinfo[1]);    
-                    OpenDayMonsters[monsterConfig.Id].Add(new KeyValuePair<int, int>(openDay, monster));
-                }
-
-                //if(monsterConfig.ActSkillID != 70000001)
-                //{
-                //    continue;
-                //}
-                //int[] skillids = monsterConfig.SkillID;
-                //if (skillids != null)
-                //{
-                //    for (int i = 0; i < skillids.Length; i++)
-                //    {
-                //        if (skillids[i] != 0)
-                //        {
-                //            continue;
-                //        }
-                //    }
-                //}
-
-                //NoSkillMonsterList.Add(monsterConfig.Id);
+               
             }
         }
 

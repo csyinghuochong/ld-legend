@@ -135,41 +135,7 @@ namespace ET
 
 			dropItemList.Add(new RewardItem() { ItemID = dropItemInfo.ItemID, ItemNum = newNumber });
 		}
-
-		public static List<RewardItem> AI_DropByPlayerLv(int monsterID, int playerLv, float dropProValue, bool all)
-		{
-			MonsterConfig monsterCof = MonsterConfigCategory.Instance.Get(monsterID);
-			//最小等级;最大等级;掉落ID1,掉落ID2
-			string LvDropID = monsterCof.LvDropID;
-			if (CommonHelp.IfNull(LvDropID))
-			{
-				return null;
-			}
-			//最小等级; 最大等级; 掉落ID1,掉落ID2 @最小等级; 最大等级; 掉落ID1,掉落ID2
-			string[] lvdropList = LvDropID.Split('@');
-			for (int i = 0; i < lvdropList.Length; i++)
-			{
-				string[] lvDropInfos = lvdropList[i].Split(';');
-				if (playerLv >= int.Parse(lvDropInfos[0]) && playerLv <= int.Parse(lvDropInfos[1]))
-				{
-					List<int> dropIds = new List<int>();
-					string[] dropList = lvDropInfos[2].Split(',');
-					for (int d = 0; d < dropList.Length; d++)
-					{
-						dropIds.Add(int.Parse(dropList[d]));
-					}
-
-					List<RewardItem> dropItemList = new List<RewardItem>();
-					for (int d = 0; d < dropIds.Count; d++)
-					{
-						DropIDToDropItem(dropIds[d], dropItemList, monsterID, dropProValue, all);
-					}
-					return dropItemList;
-				}
-			}
-			return null;
-		}
-
+		
 		/// <summary>
 		/// dropProValue 掉落概率多个道具
 		/// </summary>

@@ -53,18 +53,7 @@ namespace ET.Server
                     units[i].GetComponent<AttackRecordComponent>()?.OnRemoveAttackByUnit(defendUnit.Id);
                 }
             }
-
-            //怪物死亡， 清除玩家BUFF
-            if (defendUnit.Type == UnitType.Monster && MonsterConfigCategory.Instance.Get(defendUnit.ConfigId).RemoveBuff == 0)
-            {
-                List<Unit> units = FubenHelp.GetUnitList(defendUnit.Scene(), UnitType.Player);
-                for (int i = 0; i < units.Count; i++)
-                {
-                    units[i].GetComponent<BuffManagerComponentS>().OnDeadRemoveBuffBy(defendUnit.Id);
-                }
-            }
-
-         
+  
             numericComponent.ApplyValue( NumericType.Now_Dead, 1 );
             bool selfDeath = defendUnit == mainAttack;
             if (selfDeath)

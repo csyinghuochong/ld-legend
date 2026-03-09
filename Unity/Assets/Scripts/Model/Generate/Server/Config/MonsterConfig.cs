@@ -67,18 +67,12 @@ namespace ET
 		public int MonsterType { get; set; }
 		/// <summary>怪物子类</summary>
 		public int MonsterSonType { get; set; }
-		/// <summary>阵营</summary>
-		public int MonsterCamp { get; set; }
-		/// <summary>怪物种族</summary>
-		public int MonsterRace { get; set; }
 		/// <summary>怪物头像</summary>
 		public string MonsterHeadIcon { get; set; }
+		/// <summary>怪物阵营</summary>
+		public int MonsterCamp { get; set; }
 		/// <summary>怪物模型ID</summary>
 		public int MonsterModelID { get; set; }
-		/// <summary>触发精灵概率</summary>
-		public double SpiritPro { get; set; }
-		/// <summary>触发精灵ID</summary>
-		public int SpiritID { get; set; }
 		/// <summary>怪物等级</summary>
 		public int Lv { get; set; }
 		/// <summary>移动速度</summary>
@@ -129,12 +123,8 @@ namespace ET
 		public double SelectSize { get; set; }
 		/// <summary>掉落类型</summary>
 		public int DropType { get; set; }
-		/// <summary>造成伤害才有掉落</summary>
-		public int IfDamgeDrop { get; set; }
 		/// <summary>掉落ID</summary>
 		public int[] DropID { get; set; }
-		/// <summary>分级掉落</summary>
-		public string LvDropID { get; set; }
 		/// <summary>极品掉落概率</summary>
 		public double HideDropPro { get; set; }
 		/// <summary>怪物出现概率</summary>
@@ -155,16 +145,8 @@ namespace ET
 		public int DeathTime { get; set; }
 		/// <summary>怪物死亡触发技能</summary>
 		public int DeathSkillId { get; set; }
-		/// <summary>开服天数刷怪变化</summary>
-		public string OpenDayMonster { get; set; }
 		/// <summary>攻击初始位置</summary>
 		public double ActBasePosiY { get; set; }
-		/// <summary>是否对敌人隐身</summary>
-		public int IfHide { get; set; }
-		/// <summary>是否带走buff</summary>
-		public int RemoveBuff { get; set; }
-		/// <summary>奇遇宠物id</summary>
-		public int[] QiYuPetId { get; set; }
 
 	}
 }

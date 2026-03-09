@@ -101,8 +101,7 @@ namespace ET.Server
         public static Unit CreateMonster(Scene scene, int monsterID, float3 vector3, CreateMonsterInfo createMonsterInfo)
         {
             int openDay = ServerHelper.GetServeOpenDay(scene.Zone());
-            monsterID = MonsterConfigCategory.Instance.GetNewMonsterId(openDay, monsterID);
-
+            
             //精灵不能作为主人
             Unit master = scene.GetComponent<UnitComponent>().Get(createMonsterInfo.MasterID);
             if (master != null && master.Type == UnitType.JingLing)
@@ -433,18 +432,7 @@ namespace ET.Server
 
             List<RewardItem> droplist = AI_MonsterDrop(main, monsterCof.Id, dropAdd_Pro, false);
 
-            List<RewardItem> droplist_2 = null;
-            if (main != null && !main.IsDisposed)
-            {
-                int playerLv = main.GetComponent<UserInfoComponentS>().UserInfo.Lv;
-                droplist_2 = DropHelper.AI_DropByPlayerLv(monsterCof.Id, playerLv, dropAdd_Pro, false);
-            }
-
-            if (droplist_2 != null)
-            {
-                droplist.AddRange(droplist_2);
-            }
-
+         
             if ((monsterCof.MonsterSonType == MonsterSonTypeEnum.Type_55 || monsterCof.MonsterSonType == MonsterSonTypeEnum.Type_56) && droplist.Count == 0)
             {
                 Log.Warning($"宝箱掉落为空{monsterCof.Id} {main.Id}");
@@ -493,7 +481,7 @@ namespace ET.Server
                     dropitem.AddComponent<UnitInfoComponent>();
                     dropitem.Type = UnitType.DropItem;
                     DropComponentS dropComponent = dropitem.AddComponent<DropComponentS>();
-                    dropComponent.IfDamgeDrop = monsterCof.IfDamgeDrop;
+                  
                     dropComponent.BeAttackPlayerList = beattackIds;
                     
                     NumericComponentS numericComponentS = dropitem.AddComponent<NumericComponentS>();
