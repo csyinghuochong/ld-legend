@@ -25,14 +25,14 @@ public partial class UICodeSpawner
         }
         string strDlgName = objPanel.name;
         
-        string strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UIBehaviour/CommonUI";
+        string strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UIBehaviour/CommonUI";
         if (!Directory.Exists(strFilePath))
         {
             Directory.CreateDirectory(strFilePath);
         }
         
         // 有些ES移动到对应的Dlg下了，所以不一定在CommonUI文件夹下
-        string[] files = Directory.GetFiles(Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UIBehaviour", strDlgName + "ViewSystem.cs", SearchOption.AllDirectories);
+        string[] files = Directory.GetFiles(Application.dataPath + "/Scripts/HotfixView/Client/Legend/UIBehaviour", strDlgName + "ViewSystem.cs", SearchOption.AllDirectories);
         if ( files.Length  != 0)
         {
             // 存在的话，就不用再从新生成
@@ -83,7 +83,7 @@ public partial class UICodeSpawner
         }
         string strDlgName = objPanel.name;
 
-        string strFilePath = Application.dataPath + "/Scripts/ModelView/Client/MengJing/UIBehaviour/CommonUI";
+        string strFilePath = Application.dataPath + "/Scripts/ModelView/Client/Legend/UIBehaviour/CommonUI";
 
         if (!Directory.Exists(strFilePath))
         {
@@ -91,7 +91,7 @@ public partial class UICodeSpawner
         }
 
         // 有些ES移动到对应的Dlg下了，所以不一定在CommonUI文件夹下
-        string[] files = Directory.GetFiles(Application.dataPath + "/Scripts/ModelView/Client/MengJing/UIBehaviour", strDlgName + ".cs", SearchOption.AllDirectories);
+        string[] files = Directory.GetFiles(Application.dataPath + "/Scripts/ModelView/Client/Legend/UIBehaviour", strDlgName + ".cs", SearchOption.AllDirectories);
         if ( files.Length  != 0)
         {
             strFilePath = files[0];

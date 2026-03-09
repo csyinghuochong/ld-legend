@@ -28,7 +28,7 @@ public partial class UICodeSpawner
 			{
 				Debug.LogWarning($"----------开始生成Dlg{uiName} 相关代码 ----------");
 
-				folderPath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UI/";
+				folderPath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UI/";
 				csName = $"{gameObject.name}System.cs";
 				startStr = "public static void RegisterUIEvent";
 				view = "View.";
@@ -39,7 +39,7 @@ public partial class UICodeSpawner
 			{
 				Debug.LogWarning($"-------- 开始生成子UI: {uiName} 相关代码 -------------");
 
-				folderPath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UIBehaviour/";
+				folderPath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UIBehaviour/";
 				csName = $"{gameObject.name}ViewSystem.cs";
 				startStr = "private static void Awake";
 
@@ -49,7 +49,7 @@ public partial class UICodeSpawner
 			{
 				Debug.LogWarning($"-------- 开始生成滚动列表项: {uiName} 相关代码 -------------");
 
-				folderPath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UIItemBehaviour/";
+				folderPath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UIItemBehaviour/";
 				csName = $"{gameObject.name}ViewSystem.cs";
 				startStr = "private static void Awake";
 				scroll = "Scroll_";
@@ -313,7 +313,7 @@ public partial class UICodeSpawner
     static void SpawnCodeForDlg(GameObject gameObject)
     {
         string strDlgName  = gameObject.name;
-        string strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UI/" + strDlgName ;
+        string strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UI/" + strDlgName ;
         
         
         if ( !Directory.Exists(strFilePath) )
@@ -321,7 +321,7 @@ public partial class UICodeSpawner
 	        Directory.CreateDirectory(strFilePath);
         }
         
-	    strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UI/" + strDlgName + "/" + strDlgName + "System.cs";
+	    strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UI/" + strDlgName + "/" + strDlgName + "System.cs";
         if(File.Exists(strFilePath))
         {
             Debug.LogError("已存在 " + strDlgName + "System.cs,将不会再次生成。");
@@ -414,7 +414,7 @@ public partial class UICodeSpawner
 	static void SpawnCodeForDlgEventHandle(GameObject gameObject)
     {
         string strDlgName = gameObject.name;
-        string strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UI/" + strDlgName + "/Event" ;
+        string strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UI/" + strDlgName + "/Event" ;
         
         
         if ( !Directory.Exists(strFilePath) )
@@ -422,7 +422,7 @@ public partial class UICodeSpawner
 	        Directory.CreateDirectory(strFilePath);
         }
         
-	    strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UI/" + strDlgName + "/Event/" + strDlgName + "EventHandler.cs";
+	    strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UI/" + strDlgName + "/Event/" + strDlgName + "EventHandler.cs";
         if(File.Exists(strFilePath))
         {
 	        Debug.LogError("已存在 " + strDlgName + ".cs,将不会再次生成。");
@@ -498,7 +498,7 @@ public partial class UICodeSpawner
 	static void SpawnCodeForDlgModel(GameObject gameObject)
     {
         string strDlgName = gameObject.name;
-        string strFilePath = Application.dataPath + "/Scripts/ModelView/Client/MengJing/UI/" + strDlgName  ;
+        string strFilePath = Application.dataPath + "/Scripts/ModelView/Client/Legend/UI/" + strDlgName  ;
         
         
         if ( !Directory.Exists(strFilePath) )
@@ -506,7 +506,7 @@ public partial class UICodeSpawner
 	        Directory.CreateDirectory(strFilePath);
         }
         
-	    strFilePath = Application.dataPath + "/Scripts/ModelView/Client/MengJing/UI/" + strDlgName  + "/" + strDlgName  + ".cs";
+	    strFilePath = Application.dataPath + "/Scripts/ModelView/Client/Legend/UI/" + strDlgName  + "/" + strDlgName  + ".cs";
         if(File.Exists(strFilePath))
         {
 	        Debug.LogError("已存在 " + strDlgName + ".cs,将不会再次生成。");
@@ -545,13 +545,13 @@ public partial class UICodeSpawner
         string strDlgName = gameObject.name ;
         string strDlgComponentName =  gameObject.name + "ViewComponent";
 
-        string strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UIBehaviour/" + strDlgName;
+        string strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UIBehaviour/" + strDlgName;
 
         if ( !Directory.Exists(strFilePath) )
         {
 	        Directory.CreateDirectory(strFilePath);
         }
-	    strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/MengJing/UIBehaviour/" + strDlgName + "/" + strDlgComponentName + "System.cs";
+	    strFilePath = Application.dataPath + "/Scripts/HotfixView/Client/Legend/UIBehaviour/" + strDlgName + "/" + strDlgComponentName + "System.cs";
 	    
         StreamWriter sw = new StreamWriter(strFilePath, false, Encoding.UTF8);
 
@@ -598,12 +598,12 @@ public partial class UICodeSpawner
 	    string strDlgComponentName =  gameObject.name + "ViewComponent";
 
 
-	    string strFilePath = Application.dataPath + "/Scripts/ModelView/Client/MengJing/UIBehaviour/" + strDlgName;
+	    string strFilePath = Application.dataPath + "/Scripts/ModelView/Client/Legend/UIBehaviour/" + strDlgName;
 	    if ( !Directory.Exists(strFilePath) )
 	    {
 		    Directory.CreateDirectory(strFilePath);
 	    }
-	    strFilePath = Application.dataPath + "/Scripts/ModelView/Client/MengJing/UIBehaviour/" + strDlgName + "/" + strDlgComponentName + ".cs";
+	    strFilePath = Application.dataPath + "/Scripts/ModelView/Client/Legend/UIBehaviour/" + strDlgName + "/" + strDlgComponentName + ".cs";
 	    StreamWriter sw = new StreamWriter(strFilePath, false, Encoding.UTF8);
 	    StringBuilder strBuilder = new StringBuilder();
 	    strBuilder.AppendLine()

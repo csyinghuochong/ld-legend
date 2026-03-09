@@ -37,5 +37,8 @@ namespace ET.Client
 		WindowID_Relink,					//重连弹框
 		WindowID_Friend,					//好友界面
 		WindowID_Recharge,					//充值界面
+		
+		//新项目
+		WindowID_MedalExchange,				//勋章兑换
 	}
 }

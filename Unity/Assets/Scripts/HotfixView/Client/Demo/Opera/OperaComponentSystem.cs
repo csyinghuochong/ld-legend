@@ -510,67 +510,27 @@ namespace ET.Client
             Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
             System.Numerics.Vector3 unitPosi = new(unit.Position.x, unit.Position.y, unit.Position.z);
             Unit npc = TaskHelper.GetNpcByConfigId(self.Root(), unitPosi, npcid);
-
-            NpcConfig npcConfig = NpcConfigCategory.Instance.Get(npcid);
-            Vector3 newTarget = new(npcConfig.Position[0] * 0.01f, npcConfig.Position[1] * 0.01f, npcConfig.Position[2] * 0.01f);
-            if (npcConfig.MovePosition.Length == 0 && npc != null)
-            {
-                if (npc.GetComponent<AnimatorComponent>() != null)
-                {
-                    npc.GetComponent<AnimatorComponent>().Play(MotionType.SelectNpc);
-                }
-
-                if (npc.GetComponent<AnimationComponent>() != null)
-                {
-                    npc.GetComponent<AnimationComponent>().Play(MotionType.SelectNpc);
-                }
-            }
-
+            Vector3 newTarget = unit.Position;
             if (npc != null)
             {
-                self.Root().GetComponent<LockTargetComponent>().OnLockNpc(npc);
                 newTarget = npc.Position;
+                self.Root().GetComponent<LockTargetComponent>().OnLockNpc(npc);
             }
 
             self.NpcId = npcid;
-            newTarget.y = unit.Position.y;
             Vector3 unitPos = unit.Position;
             Vector3 dir = (unitPos - newTarget).normalized;
             self.UnitStartPosition = unit.Position;
-
-            if (PositionHelper.Distance2D(unit.Position, newTarget) <= TaskHelper.NpcSpeakDistance + 1f)
-            {
-                self.OnArriveToNpc();
-                self.OnUnitToSpeak(newTarget);
-                return;
-            }
-
-            newTarget += dir * TaskHelper.NpcSpeakDistance;
-            if (ErrorCode.ERR_Success != unit.GetComponent<StateComponentC>().CanMove())
-            {
-                return;
-            }
-            
-
-            int ret = await self.MoveToPosition(newTarget, false, operatetype);
-            if (ret != 0)
-            {
-                return;
-            }
-
-            if (PositionHelper.Distance2D(unit.Position, newTarget) > TaskHelper.NpcSpeakDistance + 0.2f)
-            {
-                return;
-            }
-
+           
             self.OnArriveToNpc();
             self.OnUnitToSpeak(newTarget);
+            
             self.Root().GetComponent<UIComponent>().CloseWindow(WindowID.WindowID_MapBig);
         }
 
         public static void OnArriveToNpc(this OperaComponent self)
         {
-            int functionId = 10001;
+            int functionId = NpcConfigCategory.Instance.Get(self.NpcId).FuncitonID;
             FunctionUI.OpenFunctionUI(self.Root(), self.NpcId, functionId);
         }
 

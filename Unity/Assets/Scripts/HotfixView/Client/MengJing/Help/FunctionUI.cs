@@ -73,8 +73,7 @@ namespace ET.Client
 
         public static WindowID GetUIPath(string uitype)
         {
-            string type = "WindowID_" + uitype.Substring(2);
-            if (Enum.TryParse(type, out WindowID windowID))
+            if (Enum.TryParse(uitype, out WindowID windowID))
             {
                 return windowID;
             }

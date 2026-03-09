@@ -388,7 +388,7 @@ namespace ET.Client
                     self.OpenUIList.Insert(0, id);
                 }
 
-                DlgHuoBiSet dlgHuoBiSet = self.GetDlgLogic<DlgHuoBiSet>();
+                /*DlgHuoBiSet dlgHuoBiSet = self.GetDlgLogic<DlgHuoBiSet>();
                 if (dlgHuoBiSet != null)
                 {
                     dlgHuoBiSet.OnUpdateTitle(self.OpenUIList[0]);
@@ -396,7 +396,7 @@ namespace ET.Client
                 else
                 {
                     self.ShowWindowAsync(WindowID.WindowID_HuoBiSet).Coroutine();
-                }
+                }*/
             }
 
             if (self.HaveUniversalBlurFeature(id))

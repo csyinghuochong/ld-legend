@@ -112,7 +112,7 @@
 # 公共UI
 
 - 以ES_为开头，放入Assets/Bundles/UI/Common目录
-- 拼好UI预设物，选择UI物体右键点击SpawnEUICode选项生成UI绑定代码
+- 拼好UI预设物，选择UI物体右键点击SpawnEUICode 或者 菜单GameObject/SpawnEUICode 选项生成UI绑定代码
 
 图例：
 ![屏幕截图 2024-08-14 142238](Images\屏幕截图 2024-08-14 142238.png)

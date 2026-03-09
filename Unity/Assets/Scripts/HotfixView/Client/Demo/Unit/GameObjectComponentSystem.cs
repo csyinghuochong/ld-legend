@@ -448,6 +448,7 @@ namespace ET.Client
             else
             {
                 self.ShowGameObject();
+                go.SetActive(true);
             }
 
             Unit unit = self.GetParent<Unit>();
